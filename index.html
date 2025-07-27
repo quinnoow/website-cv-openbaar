@@ -187,25 +187,34 @@
     </footer>
 
     <script>
-        function toggleTheme() {
-            document.body.classList.toggle('light');
-        }
+    function toggleTheme() {
+        document.body.classList.toggle('light');
+    }
 
-        // Pop-up tijdelijk uitgeschakeld voor ontwikkeling
-        /*
-        function selectVisitor(type) {
-            localStorage.setItem('bezoekerType', type);
-            document.getElementById('popup').style.display = 'none';
-            alert('Welkom, ' + type + '!');
-        }
+    function selectVisitor(type) {
+        // Lokale opslag
+        let bezoekData = JSON.parse(localStorage.getItem('bezoekerTellingen')) || {};
+        bezoekData[type] = (bezoekData[type] || 0) + 1;
+        localStorage.setItem('bezoekerTellingen', JSON.stringify(bezoekData));
 
-        window.onload = function() {
-            const bezoeker = localStorage.getItem('bezoekerType');
-            if (!bezoeker) {
-                document.getElementById('popup').style.display = 'flex';
-            }
+        // 🔁 Verstuur naar Google Sheet Web App
+        fetch(https://script.google.com/u/0/home/projects/1alRWD-Dy49Us48wBN5Wob7Fgrj3c41yjbyuHnNLV073TKUJoNQWF8edV/edit, {
+            method: "POST",
+            body: JSON.stringify({ type }),
+            headers: { "Content-Type": "application/json" }
+        });
+
+        document.getElementById('popup').style.display = 'none';
+        alert('Welkom, ' + type + '!');
+    }
+
+    window.onload = function () {
+        const bezoeker = localStorage.getItem('bezoekerTellingen');
+        if (!bezoeker) {
+            document.getElementById('popup').style.display = 'flex';
         }
-        */
-    </script>
+    }
+</script>
+
 </body>
 </html>
