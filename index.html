@@ -211,7 +211,7 @@
         bezoekData[type] = (bezoekData[type] || 0) + 1;
         localStorage.setItem('bezoekerTellingen', JSON.stringify(bezoekData));
 
-        await fetch("https://script.google.com/macros/s/AKfycbzT84y10bBxSKy8AfbC91Fybs1sbvesnVUbSnc68Vh47muVZHGibZKS2Pfn0dQ3Q2br/exec", {
+        await fetch("https://script.google.com/macros/s/AKfycby6ShR51DLCdvIz5h2ngqqbHUTKUZkX1uCjtszYUzKOOIG9KrocWz4kiSc7-8FLUw1h/exec", {
             method: "POST",
             body: JSON.stringify({
                 type: type,
