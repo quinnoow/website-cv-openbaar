@@ -5,15 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mijn Professioneel Profiel</title>
     <style>
+        :root {
+            --bg-color: #121212;
+            --text-color: #f0f0f0;
+            --header-bg: #1f1f1f;
+            --footer-bg: #1f1f1f;
+            --accent-color: #4caf50;
+            --card-bg: #2c2c2c;
+        }
+
+        body.light {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --header-bg: #f5f5f5;
+            --footer-bg: #f5f5f5;
+            --accent-color: #00796b;
+            --card-bg: #e0e0e0;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #f0f0f0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #1f1f1f;
+            background-color: var(--header-bg);
             padding: 2rem;
             text-align: center;
         }
@@ -27,7 +45,7 @@
             margin: auto;
         }
         .popup {
-            display: none; /* Tijdelijk uitgeschakeld */
+            display: none;
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
@@ -37,7 +55,7 @@
             z-index: 9999;
         }
         .popup-content {
-            background-color: #2c2c2c;
+            background-color: var(--card-bg);
             padding: 2rem;
             border-radius: 10px;
             text-align: center;
@@ -46,19 +64,19 @@
             margin: 1rem;
             padding: 0.75rem 1.5rem;
             font-size: 1rem;
-            background-color: #4caf50;
+            background-color: var(--accent-color);
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
         footer {
-            background-color: #1f1f1f;
+            background-color: var(--footer-bg);
             padding: 2rem;
             text-align: center;
         }
         a {
-            color: #4caf50;
+            color: var(--accent-color);
             text-decoration: none;
         }
         .certificaten-container {
@@ -80,11 +98,25 @@
         .certificaten-container figcaption {
             margin-top: 0.5rem;
             font-size: 0.9rem;
-            color: #ccc;
+            color: var(--text-color);
+        }
+        .toggle-theme {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 10000;
         }
     </style>
 </head>
 <body>
+    <button class="toggle-theme" onclick="toggleTheme()">Wissel thema</button>
+
     <div class="popup" id="popup">
         <div class="popup-content">
             <h2>Wie ben jij?</h2>
@@ -155,6 +187,10 @@
     </footer>
 
     <script>
+        function toggleTheme() {
+            document.body.classList.toggle('light');
+        }
+
         // Pop-up tijdelijk uitgeschakeld voor ontwikkeling
         /*
         function selectVisitor(type) {
