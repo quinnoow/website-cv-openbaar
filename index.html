@@ -205,24 +205,26 @@
             document.body.classList.toggle('light');
         }
 
-        function selectVisitor(type) {
-            let bezoekData = JSON.parse(localStorage.getItem('bezoekerTellingen')) || {};
-            bezoekData[type] = (bezoekData[type] || 0) + 1;
-            localStorage.setItem('bezoekerTellingen', JSON.stringify(bezoekData));
+        async function selectVisitor(type) {
+    let bezoekData = JSON.parse(localStorage.getItem('bezoekerTellingen')) || {};
+    bezoekData[type] = (bezoekData[type] || 0) + 1;
+    localStorage.setItem('bezoekerTellingen', JSON.stringify(bezoekData));
 
-            // Verstuur naar Google Sheet via Webhook
-            fetch("https://script.google.com/macros/s/AKfycbzT84y10bBxSKy8AfbC91Fybs1sbvesnVUbSnc68Vh47muVZHGibZKS2Pfn0dQ3Q2br/exec", {
-                method: "POST",
-                body: JSON.stringify({
-                    type: type,
-                    ip: await getClientIP(),
-                    userAgent: navigator.userAgent
-                }),
-                headers: { "Content-Type": "application/json" }
-            });
-            document.getElementById('popup').style.display = 'none';
-            alert('Welkom, ' + type + '!');
-        }
+    // Verstuur naar Google Sheet
+    fetch("https://script.google.com/macros/s/AKfycbzT84y10bBxSKy8AfbC91Fybs1sbvesnVUbSnc68Vh47muVZHGibZKS2Pfn0dQ3Q2br/exec", {
+        method: "POST",
+        body: JSON.stringify({
+            type: type,
+            ip: await getClientIP(),
+            userAgent: navigator.userAgent
+        }),
+        headers: { "Content-Type": "application/json" }
+    });
+
+    document.getElementById('popup').style.display = 'none';
+    alert('Welkom, ' + type + '!');
+}
+
 
         window.onload = function() {
             toonBezoekerStats();
