@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="test()">Test verbinding</button>
+<script>
+async function test() {
+  try {
+    const response = await fetch("https://script.google.com/macros/s/AKfycby6ShR51DLCdvIz5h2ngqqbHUTKUZkX1uCjtszYUzKOOIG9KrocWz4kiSc7-8FLUw1h/exec");
+    const data = await response.text();
+    alert("✅ Verbinding werkt: " + data);
+  } catch (e) {
+    alert("❌ Fout: " + e.message);
+    console.error(e);
+  }
+}
+</script>
+</body>
+</html>
