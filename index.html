@@ -67,11 +67,20 @@
             gap: 1rem;
             flex-wrap: wrap;
         }
+        .certificaten-container figure {
+            margin: 0;
+            text-align: center;
+        }
         .certificaten-container img {
             width: 100%;
             max-width: 300px;
             border: 1px solid #444;
             border-radius: 8px;
+        }
+        .certificaten-container figcaption {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #ccc;
         }
     </style>
 </head>
@@ -120,9 +129,18 @@
         <h2>Certificaten</h2>
         <p>Ik heb meerdere certificaten behaald voor mijn IT-vaardigheden, waaronder een score boven de 80%, wat mijn technische kennis en inzet bevestigt. Hieronder vind je visuele bewijzen van mijn behaalde resultaten.</p>
         <div class="certificaten-container">
-            <img src="certificaat1.jpg" alt="Certificaat IT Basis">
-            <img src="certificaat2.jpg" alt="Scoreblad boven 80%">
-            <img src="certificaat3.jpg" alt="Certificaat Netwerk Basis">
+            <figure>
+                <img src="certificaat1.jpg" alt="Scoreblad boven 80%">
+                <figcaption>Scoreblad boven 80%</figcaption>
+            </figure>
+            <figure>
+                <img src="certificaat2.jpg" alt="IT Essentials">
+                <figcaption>IT Essentials certificaat</figcaption>
+            </figure>
+            <figure>
+                <img src="certificaat3.jpg" alt="Netwerk Essentials">
+                <figcaption>Netwerk Essentials certificaat</figcaption>
+            </figure>
         </div>
     </section>
 
