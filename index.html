@@ -211,15 +211,12 @@
         bezoekData[type] = (bezoekData[type] || 0) + 1;
         localStorage.setItem('bezoekerTellingen', JSON.stringify(bezoekData));
 
-        await fetch("https://script.google.com/macros/s/AKfycby6ShR51DLCdvIz5h2ngqqbHUTKUZkX1uCjtszYUzKOOIG9KrocWz4kiSc7-8FLUw1h/exec", {
-            method: "POST",
-            body: JSON.stringify({
-                type: type,
-                ip: await getClientIP(),
-                userAgent: navigator.userAgent
-            }),
-            headers: { "Content-Type": "application/json" }
-        });
+        await fetch("https://script.google.com/macros/s/AKfycbwjx-wnuHd_ckSvVeN1-BxnqT3Fspgu5Bp35B76JuT416PFgxQ5LjC2DhLei-uEIEwv/exec", {
+  method: "POST",
+  body: JSON.stringify({ type: "Werkgever", ip: "1.2.3.4", userAgent: "..." }),
+  headers: { "Content-Type": "application/json" }
+});
+
 
         document.getElementById('popup').style.display = 'none';
         alert('Welkom, ' + type + '!');
