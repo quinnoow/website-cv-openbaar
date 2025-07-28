@@ -211,7 +211,7 @@
     bezoekData[type] = (bezoekData[type] || 0) + 1;
     localStorage.setItem('bezoekerTellingen', JSON.stringify(bezoekData));
 
-    await fetch("https://script.google.com/macros/s/AKfycbwyibJpgjAU9sYCPPgZJAsqmSvxTvT9LdJ2PQ_gcCPVq4_ViHmoxcT_dEk6Wj7YAAuz/exec", {
+    await fetch("https://script.google.com/macros/s/AKfycbwh0kExUJsjf0Vl7T8FUpk0KSCUvLaY5IJdxgdQ0kAMZKXSytyzjVkE90UjrpT15uXb/exec", {
         method: "POST",
         body: JSON.stringify({
             type: type,
@@ -240,7 +240,7 @@
         lijst.innerHTML = '';
 
         try {
-            const response = await fetch("https://script.google.com/macros/s/AKfycbwyibJpgjAU9sYCPPgZJAsqmSvxTvT9LdJ2PQ_gcCPVq4_ViHmoxcT_dEk6Wj7YAAuz/exec");
+            const response = await fetch("https://script.google.com/macros/s/AKfycbwh0kExUJsjf0Vl7T8FUpk0KSCUvLaY5IJdxgdQ0kAMZKXSytyzjVkE90UjrpT15uXb/exec");
             const data = await response.json();
 
             const typeTellingen = {};
