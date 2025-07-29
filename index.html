@@ -14,18 +14,26 @@
       --card-bg: #2c2c2c;
     }
 
+   body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  background-image: none; /* GEEN afbeelding in donker thema */
+}
+
     body.light {
-  --bg-color: #ffffff;
+  --bg-color: transparent;
   --text-color: #222222;
-  --header-bg: #f5f5f5;
-  --footer-bg: #f5f5f5;
+  --header-bg: rgba(255, 255, 255, 0.8);
+  --footer-bg: rgba(255, 255, 255, 0.8);
   --accent-color: #00796b;
-  --card-bg: #e0e0e0;
+  --card-bg: rgba(255, 255, 255, 0.8);
 
   background: url('achtergrond.png') no-repeat center center / cover;
   color: var(--text-color);
-      
-    }
+}
 
       {
   font-family: Arial, sans-serif;
