@@ -1,18 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mijn Professioneel Profiel</title>
+  <style>
+    :root {
+      --accent-color: #4caf50;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #000000;
+      background-image: url('achtergrond.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    body.dark {
+      background-color: #121212;
+      background-image: none;
+      color: #f0f0f0;
+    }
+
+    header, footer {
+      background-color: rgba(255, 255, 255, 0.85);
+      color: inherit;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    body.dark header,
+    body.dark footer {
+      background-color: #1f1f1f;
+    }
+
+    section {
+      background-color: rgba(255, 255, 255, 0.85);
+      color: inherit;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+    }
+
+    body.dark section {
+      background-color: rgba(18, 18, 18, 0.85);
+    }
+
+    .toggle-theme {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 10000;
+    }
+  </style>
+</head>
 <body>
-<button onclick="test()">Test verbinding</button>
-<script>
-async function test() {
-  try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycby6ShR51DLCdvIz5h2ngqqbHUTKUZkX1uCjtszYUzKOOIG9KrocWz4kiSc7-8FLUw1h/exec");
-    const data = await response.text();
-    alert("✅ Verbinding werkt: " + data);
-  } catch (e) {
-    alert("❌ Fout: " + e.message);
-    console.error(e);
-  }
-}
-</script>
+  <button class="toggle-theme" onclick="toggleTheme()">Wissel thema</button>
+
+  <header>
+    <h1>IT Support & Infrastructuur</h1>
+    <p>Professioneel profiel met focus op systemen, netwerken en praktijkgerichte IT-ondersteuning</p>
+  </header>
+
+  <section>
+    <h2>Over mij</h2>
+    <p>Ik ben een praktijkgerichte IT-professional met kennis van IT-support, back-upbeheer, netwerken, hardware en het instellen van servers...</p>
+  </section>
+
+  <!-- Meer secties zoals je eerder had... -->
+
+  <footer>
+    <p>&copy; 2025 Quincy Hautekeur – Alle rechten voorbehouden</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
 </body>
 </html>
