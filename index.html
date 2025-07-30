@@ -15,15 +15,6 @@
     }
 
    body {
-  font-family: Arial, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  margin: 0;
-  padding: 0;
-  background-image: none; /* GEEN afbeelding in donker thema */
-}
-
-    body.light {
   --bg-color: transparent;
   --text-color: #222222;
   --header-bg: rgba(255, 255, 255, 0.8);
@@ -34,6 +25,15 @@
   background: url('achtergrond.png') no-repeat center center / cover;
   color: var(--text-color);
 }
+
+    body.light {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  background-image: none; /* GEEN afbeelding in donker thema */
+} 
 
       {
   font-family: Arial, sans-serif;
