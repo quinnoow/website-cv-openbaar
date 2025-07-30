@@ -35,15 +35,15 @@
     }
 
     section {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-      background-color: rgba(255, 255, 255, 0.6);
-    }
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  background-color: transparent; /* fix: GEEN witte waas in light mode */
+}
 
-    body.dark section {
-      background-color: #2c2c2c;
-    }
+body.dark section {
+  background-color: #2c2c2c; /* donkere achtergrond alleen bij dark mode */
+}
 
     .certificaten-container img {
       width: 100%;
