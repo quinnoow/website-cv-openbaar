@@ -2,7 +2,6 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mijn Professioneel Profiel</title>
   <style>
     :root {
@@ -10,23 +9,22 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      font-family: Arial, sans-serif;
+      color: #222;
       background: url('achtergrond.png') no-repeat center center / cover;
-      color: #222222;
     }
 
     body.dark {
-      background-color: #121212;
-      background-image: none;
+      background: #121212;
       color: #f0f0f0;
     }
 
     header, footer {
-      background-color: rgba(255, 255, 255, 0.85);
       padding: 2rem;
       text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
     }
 
     body.dark header,
@@ -38,22 +36,11 @@
       padding: 2rem;
       max-width: 800px;
       margin: auto;
-      background-color: rgba(255, 255, 255, 0.85);
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      color: inherit;
+      background-color: rgba(255, 255, 255, 0.8);
     }
 
     body.dark section {
-      background-color: rgba(18, 18, 18, 0.9);
-    }
-
-    .certificaten-container {
-      margin-top: 1rem;
-    }
-
-    .certificaten-container figure {
-      margin-bottom: 2rem;
+      background-color: #2c2c2c;
     }
 
     .certificaten-container img {
@@ -61,12 +48,13 @@
       max-width: 300px;
       border: 1px solid #444;
       border-radius: 8px;
+      display: block;
+      margin: 1rem auto;
     }
 
     .certificaten-container figcaption {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: inherit;
+      text-align: center;
+      margin-bottom: 2rem;
     }
 
     .toggle-theme {
@@ -79,7 +67,12 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      z-index: 10000;
+      z-index: 1000;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
     }
 
     .popup {
@@ -94,15 +87,10 @@
     }
 
     .popup-content {
-      background-color: rgba(255, 255, 255, 0.95);
+      background-color: #fff;
       padding: 2rem;
       border-radius: 10px;
       text-align: center;
-    }
-
-    body.dark .popup-content {
-      background-color: #2c2c2c;
-      color: #f0f0f0;
     }
 
     .popup-content button {
@@ -116,9 +104,9 @@
       cursor: pointer;
     }
 
-    a {
-      color: var(--accent-color);
-      text-decoration: none;
+    body.dark .popup-content {
+      background-color: #2c2c2c;
+      color: #f0f0f0;
     }
   </style>
 </head>
@@ -140,30 +128,24 @@
     <p>Professioneel profiel met focus op systemen, netwerken en praktijkgerichte IT-ondersteuning</p>
   </header>
 
-  <section>
-    <h2>Over mij</h2>
-    <p>Ik ben een praktijkgerichte IT-professional met kennis van IT-support, back-upbeheer, netwerken, hardware en het instellen van servers. Ik werk gestructureerd, oplossingsgericht en met oog voor gebruiksvriendelijkheid en veiligheid.</p>
+  <section><h2>Over mij</h2>
+    <p>Ik ben een praktijkgerichte IT-professional...</p>
   </section>
 
-  <section>
-    <h2>Ervaring</h2>
-    <p>Ik heb ervaring met HDD-partitionering, systeemimages, recoverybeheer, installatie en probleemoplossing van Windows-systemen (7, 10, 11), montage van pc-componenten, up-to-date blijven met hardwareontwikkelingen, IPv4/IPv6-netwerken, WiFi- en kabelconfiguratie, installatie van randapparatuur (routers, switches, UPS), en het opzetten van web- en FTP-servers. Ook heb ik kennis van Windows Server 2016, inclusief Active Directory, DHCP en fileservers.</p>
+  <section><h2>Ervaring</h2>
+    <p>Ik heb ervaring met HDD-partitionering, Windows-systemen...</p>
   </section>
 
-  <section>
-    <h2>Waarom deze website?</h2>
-    <p>Deze website is gemaakt om potentiële werkgevers, recruiters en samenwerkingspartners een duidelijk en eerlijk beeld te geven van wie ik ben, hoe ik werk en waar ik voor sta.
-    Daarnaast wil ik aantonen dat je geen jarenlange ervaring nodig hebt om iets te realiseren — motivatie en doorzettingsvermogen kunnen je al ver brengen. Ondanks dat ik geen voorkennis had van HTML, heb ik deze website zelf opgebouwd.</p>
+  <section><h2>Waarom deze website?</h2>
+    <p>Deze website is gemaakt om potentiële werkgevers...</p>
   </section>
 
-  <section>
-    <h2>Mijn aanpak</h2>
-    <p>Ik ben oplossingsgericht, zelfstandig én samenwerkingsvaardig. Of het nu gaat om netwerken, hardware, back-ups of ondersteuning bij AI-gerelateerde tools – ik werk gestructureerd, betrouwbaar en met focus op gebruiksvriendelijkheid en efficiëntie.</p>
+  <section><h2>Mijn aanpak</h2>
+    <p>Ik ben oplossingsgericht, zelfstandig én samenwerkingsvaardig...</p>
   </section>
 
-  <section>
-    <h2>Opleiding en ontwikkeling</h2>
-    <p>Mijn IT-kennis is opgebouwd via praktijkervaring, zelfstudie en voortdurende interesse in technologie. Door eigen projecten en het actief volgen van nieuwe ontwikkelingen heb ik een brede en actuele technische basis opgebouwd.</p>
+  <section><h2>Opleiding en ontwikkeling</h2>
+    <p>Mijn IT-kennis is opgebouwd via praktijkervaring...</p>
   </section>
 
   <section>
@@ -188,7 +170,6 @@
     <h2>Contact</h2>
     <p>Cv: <a href="cv quincy hautekeur 23.06.2025 .pdf" download>📄 CV (PDF)</a></p>
     <p>E-mail: <a href="mailto:quincy.hautekeur@hotmail.com">e-mail</a></p>
-    <!-- <p>LinkedIn: <a href="https://linkedin.com">linkedin.com/jouwprofiel</a></p> -->
   </section>
 
   <footer>
