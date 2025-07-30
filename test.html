@@ -6,20 +6,15 @@
   <title>Mijn Professioneel Profiel</title>
   <style>
     :root {
-      --bg-color: #121212;
-      --text-color: #f0f0f0;
-      --header-bg: #1f1f1f;
-      --footer-bg: #1f1f1f;
       --accent-color: #4caf50;
-      --card-bg: #2c2c2c;
     }
 
-   body {
+    body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       color: #000000;
-      background-image: url('achtergrond.png');
+      background-image: url('jouw-afbeelding.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -31,43 +26,32 @@
       color: #f0f0f0;
     }
 
-      {
-  font-family: Arial, sans-serif;
-  /* background-color: var(--bg-color);  ❌ tijdelijk uitzetten */
-  color: var(--text-color);
-  margin: 0;
-  padding: 0;
-}
-
     header, footer {
-      background-color: var(--header-bg);
+      background-color: rgba(255, 255, 255, 0.85);
+      color: inherit;
       padding: 2rem;
       text-align: center;
     }
 
+    body.dark header,
+    body.dark footer {
+      background-color: #1f1f1f;
+    }
+
     section {
+      background-color: rgba(255, 255, 255, 0.85);
+      color: inherit;
       padding: 2rem;
       max-width: 800px;
       margin: auto;
+      margin-bottom: 1rem;
+      border-radius: 10px;
     }
-    .certificaten-container {
-      /*display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    /* verwijder dit voor onderelkaar niet naast elkaar*/
+
+    body.dark section {
+      background-color: rgba(18, 18, 18, 0.85);
     }
-    .certificaten-container img {
-      width: 100%;
-      max-width: 300px;
-      border: 1px solid #444;
-      border-radius: 8px;
-    }
-    .certificaten-container figcaption {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--text-color);
-    }
+
     .toggle-theme {
       position: fixed;
       top: 1rem;
@@ -80,54 +64,10 @@
       cursor: pointer;
       z-index: 10000;
     }
-
-    .popup {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.85);
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-
-    .popup-content {
-      background-color: var(--card-bg);
-      padding: 2rem;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    .popup-content button {
-      margin: 1rem;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      background-color: var(--accent-color);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    a {
-      color: var(--accent-color);
-      text-decoration: none;
-    }
   </style>
 </head>
 <body>
   <button class="toggle-theme" onclick="toggleTheme()">Wissel thema</button>
-
-  <div class="popup" id="popup">
-    <div class="popup-content">
-      <h2>Wie ben jij?</h2>
-      <p>Laat me weten wie je bent zodat ik beter kan inspelen op jouw bezoek:</p>
-      <button onclick="selectVisitor('Werkgever')">Werkgever</button>
-      <button onclick="selectVisitor('Recruiter')">Recruiter</button>
-      <button onclick="selectVisitor('Andere')">Andere</button>
-    </div>
-  </div>
 
   <header>
     <h1>IT Support & Infrastructuur</h1>
@@ -136,7 +76,7 @@
 
   <section>
     <h2>Over mij</h2>
-    <p>Ik ben een praktijkgerichte IT-professional met kennis van IT-support, back-upbeheer, netwerken, hardware en het instellen van servers. Ik werk gestructureerd, oplossingsgericht en met oog voor gebruiksvriendelijkheid en veiligheid.</p>
+    <p>Ik ben een praktijkgerichte IT-professional met kennis van IT-support, back-upbeheer, netwerken, hardware en het instellen van servers...</p>
   </section>
 
   <section>
@@ -184,28 +124,14 @@
     <p>E-mail: <a href="mailto:quincy.hautekeur@hotmail.com">e-mail</a></p>
     <!-- <p>LinkedIn: <a href="https://linkedin.com">linkedin.com/jouwprofiel</a></p> -->
   </section>
-
   <footer>
-    <p>&copy; 2025 quincy hautekeur – Alle rechten voorbehouden</p>
+    <p>&copy; 2025 Quincy Hautekeur – Alle rechten voorbehouden</p>
   </footer>
 
   <script>
     function toggleTheme() {
-      document.body.classList.toggle('light');
+      document.body.classList.toggle('dark');
     }
-
-    function selectVisitor(type) {
-      localStorage.setItem('bezoekerTellingen', JSON.stringify({ [type]: 1 }));
-      document.getElementById('popup').style.display = 'none';
-      alert('Welkom, ' + type + '!');
-    }
-
-    window.onload = function () {
-      const bezoeker = localStorage.getItem('bezoekerTellingen');
-      if (!bezoeker) {
-        document.getElementById('popup').style.display = 'flex';
-      }
-    };
   </script>
 </body>
 </html>
