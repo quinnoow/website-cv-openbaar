@@ -1,5 +1,12 @@
-<audio controls>
-  <source src="ANDROMEDA - MONTAGEM COMA.aac" type="audio/mpeg">
-  Je browser ondersteunt geen audio.
-</audio>
+<audio id="myPlayer" controls></audio>
 
+<script>
+// Bestand ophalen via JavaScript
+fetch("audio-bestand.mp3") // zet hier jouw bestandspad
+  .then(response => response.blob())
+  .then(blob => {
+    const url = URL.createObjectURL(blob);
+    document.getElementById("myPlayer").src = url;
+  })
+  .catch(error => console.error("Audio laden mislukt:", error));
+</script>
